@@ -57,7 +57,7 @@ jobs:
           load: true
           tags: ${{ env.TEST_TAG }}
 
-      - name: Test ${{ github.event.inputs.test }} for ${{ github.event.inputs.url }}
+      - name: Run selected tests
         run: |
           docker run ${{ env.TEST_TAG }} \
             python default.py \
@@ -70,9 +70,20 @@ jobs:
               -u ${{ github.event.inputs.url }} \
             | tee results.txt
 
-      - name: Upload webperf results as artifact
+      - name: Get list of available tests
+        run: |
+          docker run ${{ env.TEST_TAG }} python default.py -t ? > available-tests.txt
+
+      - name: Upload test results as artifact
         uses: actions/upload-artifact@v4
         with:
           name: webperf-results
           path: results.txt
-          retention-days: 30
+          retention-days: 1
+
+      - name: Upload available tests as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: available-tests
+          path: available-tests.txt
+          retention-days: 1
