@@ -12,6 +12,7 @@ on:
       - '**regression-test-404.yml'
       - '**regression-test-a11y-statement.yml'
       - '**regression-test-css.yml'
+      - '**regression-test-dns.yml'
       - '**regression-test-docker-image.yml'
       - '**regression-test-email.yml'
       - '**regression-test-energy-efficiency.yml'
@@ -20,23 +21,29 @@ on:
       - '**regression-test-http.yml'
       - '**regression-test-lint-css.yml'
       - '**regression-test-pa11y.yml'
+      - '**regression-test-privacy.yml'
       - '**regression-test-sitespeed-browsertime-har.yml'
       - '**regression-test-sitespeed.yml'
       - '**regression-test-software.yml'
       - '**regression-test-standard-files.yml'
       - '**regression-test-tracking.yml'
       - '**regression-test-webbkoll.yml'
+permissions:
+  contents: read
+
 jobs:
   build:
+    permissions:
+      contents: write
     runs-on: ${{ matrix.os }}
     strategy:
             matrix:
                 os: [windows-latest]
     steps:
     - name: Check out repository code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
     - name: Setup python
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@v7
       with:
         python-version: '3.13' # Version range or exact version of a Python version to use, using SemVer's version range syntax
         architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
@@ -46,9 +53,17 @@ jobs:
       run: python default.py --update-translations
     - if: always()
       name: Git Add any changes to Translation(s)
+      # bash, since the default shell on windows-latest is PowerShell
+      shell: bash
       run: |
+        git add locales/
+        # git commit fails when there is nothing to commit, which made this
+        # step, and the job, fail on every run with up to date translations.
+        if git diff --cached --quiet; then
+          echo "No changed translations to commit."
+          exit 0
+        fi
         git config --global user.name 'GitHub Action'
         git config --global user.email '7h3Rabbit@users.noreply.github.com'
-        git add locales/
         git commit -m "Added changed Translation(s)"
         git push

@@ -6,6 +6,7 @@ import os
 from helpers.setting_helper import get_config
 from helpers.browser_helper import get_chromium_browser
 from helpers.models import Rating
+from helpers.sitespeed_helper import get_first_page_entries
 from tests import energy_efficiency_carbon_percentiles
 from tests.sitespeed_base import get_result
 from tests.utils import get_translation
@@ -233,7 +234,7 @@ def run_test(global_translation, url):
 
     return (rating, result_dict)
 
-def get_total_bytes(filename, result_dict):
+def get_total_bytes(filename, result_dict, origin_domain):
     total_bytes = 0
     sources = []
     if not os.path.exists(filename):
@@ -242,11 +243,14 @@ def get_total_bytes(filename, result_dict):
     with open(filename, encoding='utf-8') as json_input_file:
         har_data = json.load(json_input_file)
 
-        if 'log' in har_data:
-            har_data = har_data['log']
+        entries = get_first_page_entries(har_data, origin_domain)
+
+        # fail if the recording isn't of the tested website
+        if entries is None:
+            return None
 
         req_index = 1
-        for entry in har_data["entries"]:
+        for entry in entries:
             req = entry['request']
             res = entry['response']
 
@@ -313,7 +317,7 @@ def get_total_bytes_for_url(url, result_dict):
 
     browsertime_Hars = read_sites_from_directory(result_folder_name, origin_domain, -1, -1)
     if len(browsertime_Hars) < 1:
-        return -1
+        return None
 
-    transfer_bytes = get_total_bytes(browsertime_Hars[0][0], result_dict)
+    transfer_bytes = get_total_bytes(browsertime_Hars[0][0], result_dict, origin_domain)
     return transfer_bytes

@@ -83,11 +83,8 @@ msgstr "Anger ingen utvärderingsmetod ({0})"
 msgid "no-evaluation-method (resolved)"
 msgstr "Anger sin utvärderingsmetod (löst)"
 
-msgid "has-canonical-notification-function-link (unresolved)"
-msgstr "Har inte korrekt länk för anmälan ({0})"
-
-msgid "has-canonical-notification-function-link (resolved)"
-msgstr "Har korrekt länk för anmälan (löst)"
+msgid "has-canonical-notification-function-link (info)"
+msgstr "Redogörelsen hänvisar till rätt tillsynsmyndighet för anmälan"
 
 msgid "has-old-notification-function-link (unresolved)"
 msgstr "Har en gammal länk för anmälan ({0})"
@@ -108,10 +105,10 @@ msgid "compatible-word-not (resolved)"
 msgstr "Anger själv att webbplats ej är kompatibel (löst)"
 
 msgid "no-compatible-word (unresolved)"
-msgstr "Ingen text om följdsamhet hittades ({0})"
+msgstr "Ingen text om följsamhet hittades ({0})"
 
 msgid "no-compatible-word (resolved)"
-msgstr "Ingen text om följdsamhet hittades (löst)"
+msgstr "Ingen text om följsamhet hittades (löst)"
 
 msgid "has-unreasonably-burdensome-accommodation (unresolved)"
 msgstr "Hävdar oskäligt betungande anpassning ({0})"
@@ -124,3 +121,12 @@ msgstr "Ingen tillgänglighetsredogörelse hittades ({0})"
 
 msgid "no-a11y-statement (resolved)"
 msgstr "Tillgänglighetsredogörelse hittad (löst)"
+
+msgid "statement-is-page-section (unresolved)"
+msgstr "Redogörelsen är ett avsnitt på en annan sida och har ingen egen sida ({0})"
+
+msgid "statement-is-page-section (resolved)"
+msgstr "Redogörelsen har en egen sida (löst)"
+
+msgid "no-country-rules (info)"
+msgstr "Inga regler för webbplatsens land hittades, redogörelsen bedömdes inte"

@@ -31,571 +31,979 @@ msgstr "Text som visas istället för msgid, här oberoende av allvarlighetsniv�
 
 
 msgid "largest-contentful-paint-element (unresolved)"
-msgstr "Största innehållsrika elementet ({0})"
+msgstr "Det största innehållet på sidan tar lång tid att visas ({0})"
 
 msgid "largest-contentful-paint-element (resolved)"
-msgstr "Största innehållsrika elementet (löst)"
+msgstr "Det största innehållet på sidan visas snabbt (löst)"
 
 msgid "unused-css-rules (unresolved)"
-msgstr "Minska oanvänd CSS ({0})"
+msgstr "Ta bort designkod (CSS) som inte används så sidan laddar snabbare ({0})"
 
 msgid "unused-css-rules (resolved)"
-msgstr "Minska oanvänd CSS (löst)"
+msgstr "Sidan laddar ingen onödig designkod (CSS) (löst)"
 
 msgid "unused-javascript (unresolved)"
-msgstr "Minska oanvänd JavaScript ({0})"
+msgstr "Ta bort programkod (JavaScript) som inte används så sidan laddar snabbare ({0})"
 
 msgid "unused-javascript (resolved)"
-msgstr "Minska oanvänd JavaScript (löst)"
+msgstr "Sidan laddar ingen onödig programkod (JavaScript) (löst)"
 
 msgid "legacy-javascript (unresolved)"
-msgstr "Undvik att leverera äldre JavaScript till moderna webbläsare ({0})"
+msgstr "Sidan skickar gammaldags programkod till moderna webbläsare i onödan ({0})"
 
 msgid "legacy-javascript (resolved)"
-msgstr "Undvik att leverera äldre JavaScript till moderna webbläsare (löst)"
+msgstr "Sidan skickar inte gammaldags programkod till moderna webbläsare (löst)"
 
 msgid "cumulative-layout-shift (unresolved)"
-msgstr "Kumulativ layoutförskjutning ({0})"
+msgstr "Innehållet hoppar runt medan sidan laddar ({0})"
 
 msgid "cumulative-layout-shift (resolved)"
-msgstr "Kumulativ layoutförskjutning (löst)"
+msgstr "Innehållet ligger stilla medan sidan laddar (löst)"
 
 msgid "duplicated-javascript (unresolved)"
-msgstr "Ta bort duplicerade moduler i JavaScript-buntar ({0})"
+msgstr "Samma programkod (JavaScript) laddas flera gånger i onödan ({0})"
 
 msgid "duplicated-javascript (resolved)"
-msgstr "Ta bort duplicerade moduler i JavaScript-buntar (löst)"
+msgstr "Ingen programkod (JavaScript) laddas dubbelt (löst)"
 
 msgid "layout-shifts (unresolved)"
-msgstr "Undvik stora layoutförskjutningar ({0})"
+msgstr "Innehållet flyttar sig plötsligt och kan få besökare att klicka fel ({0})"
 
 msgid "layout-shifts (resolved)"
-msgstr "Undvik stora layoutförskjutningar (löst)"
+msgstr "Innehållet flyttar sig inte plötsligt (löst)"
 
 msgid "largest-contentful-paint (unresolved)"
-msgstr "Största innehållsrika målning ({0})"
+msgstr "Det tar lång tid innan sidans huvudinnehåll syns ({0})"
 
 msgid "largest-contentful-paint (resolved)"
-msgstr "Största innehållsrika målning (löst)"
+msgstr "Sidans huvudinnehåll syns snabbt (löst)"
 
 msgid "uses-long-cache-ttl (unresolved)"
-msgstr "Servera statiska resurser med effektiv cachepolicy ({0})"
+msgstr "Låt återkommande besökares webbläsare spara filer så sidan laddar snabbare nästa gång ({0})"
 
 msgid "uses-long-cache-ttl (resolved)"
-msgstr "Servera statiska resurser med effektiv cachepolicy (löst)"
+msgstr "Återkommande besökares webbläsare sparar filer så sidan laddar snabbare (löst)"
 
 msgid "first-contentful-paint (unresolved)"
-msgstr "Första innehållsrika målning ({0})"
+msgstr "Det tar lång tid innan något alls syns på sidan ({0})"
 
 msgid "first-contentful-paint (resolved)"
-msgstr "Första innehållsrika målning (löst)"
+msgstr "Något syns snabbt på sidan (löst)"
 
 msgid "render-blocking-resources (unresolved)"
-msgstr "Eliminera renderingsblockerande resurser ({0})"
+msgstr "Vissa filer bromsar upp så att sidan visas senare ({0})"
 
 msgid "render-blocking-resources (resolved)"
-msgstr "Eliminera renderingsblockerande resurser (löst)"
+msgstr "Inga filer bromsar upp när sidan visas (löst)"
 
 msgid "total-blocking-time (unresolved)"
-msgstr "Total blockeringstid ({0})"
+msgstr "Sidan är upptagen länge och reagerar trögt på klick ({0})"
 
 msgid "total-blocking-time (resolved)"
-msgstr "Total blockeringstid (löst)"
+msgstr "Sidan reagerar snabbt på klick (löst)"
 
 msgid "speed-index (unresolved)"
-msgstr "Hastighetsindex ({0})"
+msgstr "Det tar lång tid innan sidan ser färdigladdad ut ({0})"
 
 msgid "speed-index (resolved)"
-msgstr "Hastighetsindex (löst)"
+msgstr "Sidan ser snabbt färdigladdad ut (löst)"
 
 msgid "interactive (unresolved)"
-msgstr "Tid till interaktivitet ({0})"
+msgstr "Det tar lång tid innan sidan går att använda ({0})"
 
 msgid "interactive (resolved)"
-msgstr "Tid till interaktivitet (löst)"
+msgstr "Sidan går snabbt att använda (löst)"
 
 msgid "max-potential-fid (unresolved)"
-msgstr "Max potentiell första inmatningsfördröjning ({0})"
+msgstr "Sidan kan reagera långsamt på besökarens första klick ({0})"
 
 msgid "max-potential-fid (resolved)"
-msgstr "Max potentiell första inmatningsfördröjning (löst)"
+msgstr "Sidan reagerar snabbt på besökarens första klick (löst)"
 
 msgid "uses-responsive-images (unresolved)"
-msgstr "Anpassa bildstorlekar korrekt ({0})"
+msgstr "Bilderna är större än de behöver vara för skärmen ({0})"
 
 msgid "uses-responsive-images (resolved)"
-msgstr "Anpassa bildstorlekar korrekt (löst)"
+msgstr "Bilderna är lagom stora för skärmen (löst)"
 
 msgid "offscreen-images (unresolved)"
-msgstr "Skjut upp bilder utanför skärmen ({0})"
+msgstr "Ladda bilder som inte syns direkt först när de behövs ({0})"
 
 msgid "offscreen-images (resolved)"
-msgstr "Skjut upp bilder utanför skärmen (löst)"
+msgstr "Bilder som inte syns direkt laddas först när de behövs (löst)"
 
 msgid "unminified-css (unresolved)"
-msgstr "Minifiera CSS ({0})"
+msgstr "Designkoden (CSS) kan komprimeras så sidan laddar snabbare ({0})"
 
 msgid "unminified-css (resolved)"
-msgstr "Minifiera CSS (löst)"
+msgstr "Designkoden (CSS) är komprimerad (löst)"
 
 msgid "unminified-javascript (unresolved)"
-msgstr "Minifiera JavaScript ({0})"
+msgstr "Programkoden (JavaScript) kan komprimeras så sidan laddar snabbare ({0})"
 
 msgid "unminified-javascript (resolved)"
-msgstr "Minifiera JavaScript (löst)"
+msgstr "Programkoden (JavaScript) är komprimerad (löst)"
 
 msgid "uses-optimized-images (unresolved)"
-msgstr "Effektiv kodning av bilder ({0})"
+msgstr "Bilderna kan komprimeras så de laddar snabbare ({0})"
 
 msgid "uses-optimized-images (resolved)"
-msgstr "Effektiv kodning av bilder (löst)"
+msgstr "Bilderna är komprimerade (löst)"
 
 msgid "modern-image-formats (unresolved)"
-msgstr "Servera bilder i nästa generations format ({0})"
+msgstr "Spara bilder i moderna format så de laddar snabbare ({0})"
 
 msgid "modern-image-formats (resolved)"
-msgstr "Servera bilder i nästa generations format (löst)"
+msgstr "Bilderna sparas i moderna format (löst)"
 
 msgid "uses-text-compression (unresolved)"
-msgstr "Aktivera textkomprimering ({0})"
+msgstr "Slå på komprimering av text så sidan laddar snabbare ({0})"
 
 msgid "uses-text-compression (resolved)"
-msgstr "Aktivera textkomprimering (löst)"
+msgstr "Texten komprimeras så sidan laddar snabbare (löst)"
 
 msgid "uses-rel-preconnect (unresolved)"
-msgstr "Föranslut till nödvändiga ursprung ({0})"
+msgstr "Förbered anslutningen till andra webbplatser så de laddar snabbare ({0})"
 
 msgid "uses-rel-preconnect (resolved)"
-msgstr "Föranslut till nödvändiga ursprung (löst)"
+msgstr "Anslutningen till andra webbplatser förbereds (löst)"
 
 msgid "server-response-time (unresolved)"
-msgstr "Initial serverresponstid var kort ({0})"
+msgstr "Servern är långsam med att svara ({0})"
 
 msgid "server-response-time (resolved)"
-msgstr "Initial serverresponstid var kort (löst)"
+msgstr "Servern svarar snabbt (löst)"
 
 msgid "redirects (unresolved)"
-msgstr "Undvik flera sidomdirigeringar ({0})"
+msgstr "Besökaren skickas vidare flera gånger innan rätt sida visas ({0})"
 
 msgid "redirects (resolved)"
-msgstr "Undvik flera sidomdirigeringar (löst)"
+msgstr "Besökaren skickas inte vidare i onödan (löst)"
 
 msgid "efficient-animated-content (unresolved)"
-msgstr "Använd videoformat för animerat innehåll ({0})"
+msgstr "Använd video i stället för tunga animerade bilder (GIF) ({0})"
 
 msgid "efficient-animated-content (resolved)"
-msgstr "Använd videoformat för animerat innehåll (löst)"
+msgstr "Animationer använder video i stället för tunga bildfiler (löst)"
 
 msgid "total-byte-weight (unresolved)"
-msgstr "Undvik enorma nätverkspayloads ({0})"
+msgstr "Sidan laddar väldigt mycket data ({0})"
 
 msgid "total-byte-weight (resolved)"
-msgstr "Undvik enorma nätverkspayloads (löst)"
+msgstr "Sidan laddar lagom mycket data (löst)"
 
 msgid "dom-size (unresolved)"
-msgstr "Undvik överdriven DOM-storlek ({0})"
+msgstr "Sidan är för komplex och blir tung att visa ({0})"
 
 msgid "dom-size (resolved)"
-msgstr "Undvik överdriven DOM-storlek (löst)"
+msgstr "Sidan är lagom komplex att visa (löst)"
 
 msgid "bootup-time (unresolved)"
-msgstr "JavaScript-körningstid ({0})"
+msgstr "Programkoden (JavaScript) tar lång tid att köra ({0})"
 
 msgid "bootup-time (resolved)"
-msgstr "JavaScript-körningstid (löst)"
+msgstr "Programkoden (JavaScript) körs snabbt (löst)"
 
 msgid "mainthread-work-breakdown (unresolved)"
-msgstr "Minimera arbete på huvudtråden ({0})"
+msgstr "Webbläsaren får jobba för mycket med att bygga upp sidan ({0})"
 
 msgid "mainthread-work-breakdown (resolved)"
-msgstr "Minimera arbete på huvudtråden (löst)"
+msgstr "Webbläsaren behöver inte jobba för mycket med sidan (löst)"
 
 msgid "font-display (unresolved)"
-msgstr "All text ska förbli synlig under webfont-laddning ({0})"
+msgstr "Texten är osynlig medan specialtypsnitt laddas ({0})"
 
 msgid "font-display (resolved)"
-msgstr "All text förblir synlig under webfont-laddning (löst)"
+msgstr "Texten syns även medan specialtypsnitt laddas (löst)"
 
 msgid "uses-passive-event-listeners (unresolved)"
-msgstr "Använd passiva lyssnare för att förbättra rullningsprestanda ({0})"
+msgstr "Sidan kan göras smidigare att rulla ({0})"
 
 msgid "uses-passive-event-listeners (resolved)"
-msgstr "Använder passiva lyssnare för att förbättra rullningsprestanda (löst)"
+msgstr "Sidan är smidig att rulla (löst)"
 
 msgid "no-document-write (unresolved)"
-msgstr "Javascript, undvik `document.write()` ({0})"
+msgstr "En gammal teknik (document.write) bromsar laddningen ({0})"
 
 msgid "no-document-write (resolved)"
-msgstr "Javascript, undviker `document.write() (löst)"
+msgstr "Sidan använder inte den gamla tekniken document.write som bromsar laddningen (löst)"
 
 msgid "long-tasks (unresolved)"
-msgstr "Undvik långa huvudtrådsuppgifter ({0})"
+msgstr "Vissa uppgifter låser sidan en längre stund ({0})"
 
 msgid "long-tasks (resolved)"
-msgstr "Undviker långa huvudtrådsuppgifter (löst)"
+msgstr "Inga uppgifter låser sidan längre stunder (löst)"
 
 msgid "unsized-images (unresolved)"
-msgstr "Bildelement ska ha explicit `width` och `height` ({0})"
+msgstr "Bilder saknar angiven storlek, vilket får sidan att hoppa ({0})"
 
 msgid "unsized-images (resolved)"
-msgstr "Bildelement har explicit `width` och `height` (löst)"
+msgstr "Bilder har angiven storlek så sidan inte hoppar (löst)"
 
 msgid "viewport (unresolved)"
-msgstr "Ska ha en <meta name=\"viewport\">-tagg med width eller initial-scale ({0})"
+msgstr "Sidan saknar inställning för att visas rätt på mobilen ({0})"
 
 msgid "viewport (resolved)"
-msgstr "Har en <meta name=\"viewport\">-tagg med width eller initial-scale (löst)"
+msgstr "Sidan har inställning för att visas rätt på mobilen (löst)"
 
 msgid "network-requests (unresolved)"
-msgstr "Nätverksförfrågningar ({0})"
+msgstr "Allt som sidan hämtar från nätet ({0})"
 
 msgid "network-requests (resolved)"
-msgstr "Nätverksförfrågningar (löst)"
+msgstr "Allt som sidan hämtar från nätet (löst)"
 
 msgid "network-rtt (unresolved)"
-msgstr "Nätverkets rundturstider ({0})"
+msgstr "Hur lång tid data tar fram och tillbaka på nätet ({0})"
 
 msgid "network-rtt (resolved)"
-msgstr "Nätverkets rundturstider (löst)"
+msgstr "Hur lång tid data tar fram och tillbaka på nätet (löst)"
 
 msgid "network-server-latency (unresolved)"
-msgstr "Serverns backend-fördröjningar ({0})"
+msgstr "Fördröjning i servern innan den svarar ({0})"
 
 msgid "network-server-latency (resolved)"
-msgstr "Serverns backend-fördröjningar (löst)"
+msgstr "Fördröjning i servern innan den svarar (löst)"
 
 msgid "main-thread-tasks (unresolved)"
-msgstr "Huvudtrådsuppgifter ({0})"
+msgstr "Uppgifter som webbläsaren utför för sidan ({0})"
 
 msgid "main-thread-tasks (resolved)"
-msgstr "Huvudtrådsuppgifter (löst)"
+msgstr "Uppgifter som webbläsaren utför för sidan (löst)"
 
 msgid "diagnostics (unresolved)"
-msgstr "Diagnostik ({0})"
+msgstr "Teknisk information om sidan ({0})"
 
 msgid "diagnostics (resolved)"
-msgstr "Diagnostik (löst)"
+msgstr "Teknisk information om sidan (löst)"
 
 msgid "metrics (unresolved)"
-msgstr "Mätvärden ({0})"
+msgstr "Mätvärden för sidans prestanda ({0})"
 
 msgid "metrics (resolved)"
-msgstr "Mätvärden (löst)"
+msgstr "Mätvärden för sidans prestanda (löst)"
 
 msgid "screenshot-thumbnails (unresolved)"
-msgstr "Skärmdumpsminiatyrer ({0})"
+msgstr "Småbilder av hur sidan laddas ({0})"
 
 msgid "screenshot-thumbnails (resolved)"
-msgstr "Skärmdumpsminiatyrer (löst)"
+msgstr "Småbilder av hur sidan laddas (löst)"
 
 msgid "final-screenshot (unresolved)"
-msgstr "slutlig skärmdump ({0})"
+msgstr "Bild av sidan när den laddats klart ({0})"
 
 msgid "final-screenshot (resolved)"
-msgstr "slutlig skärmdump (löst)"
+msgstr "Bild av sidan när den laddats klart (löst)"
 
 msgid "script-treemap-data (unresolved)"
-msgstr "script-treemap-data ({0})"
+msgstr "Översikt av sidans programkod ({0})"
 
 msgid "script-treemap-data (resolved)"
-msgstr "script-treemap-data (löst)"
+msgstr "Översikt av sidans programkod (löst)"
 
 msgid "resource-summary (unresolved)"
-msgstr "resurssammanfattning ({0})"
+msgstr "Sammanfattning av vad sidan hämtar ({0})"
 
 msgid "resource-summary (resolved)"
-msgstr "resurssammanfattning (löst)"
+msgstr "Sammanfattning av vad sidan hämtar (löst)"
 
 msgid "aria-allowed-attr (unresolved)"
-msgstr "`[aria-*]`-attribut ska matcha sina roller ({0})"
+msgstr "Vissa hjälpmedelsmärkningar (ARIA) passar inte ihop med elementen de sitter på ({0})"
 
 msgid "aria-allowed-attr (resolved)"
-msgstr "`[aria-*]`-attribut matchar sina roller (löst)"
+msgstr "Hjälpmedelsmärkningar (ARIA) passar ihop med elementen de sitter på (löst)"
 
 msgid "aria-allowed-role (unresolved)"
-msgstr "Ska använda ARIA-roller endast på kompatibla element ({0})"
+msgstr "Hjälpmedelsroller (ARIA) används på element som inte stöder dem ({0})"
 
 msgid "aria-allowed-role (resolved)"
-msgstr "Använder ARIA-roller endast på kompatibla element (löst)"
+msgstr "Hjälpmedelsroller (ARIA) används bara på element som stöder dem (löst)"
 
 msgid "aria-conditional-attr (unresolved)"
-msgstr "ARIA-attribut ska användas enligt specifikation för elementets roll ({0})"
+msgstr "Vissa hjälpmedelsmärkningar (ARIA) används inte enligt reglerna ({0})"
 
 msgid "aria-conditional-attr (resolved)"
-msgstr "ARIA-attribut används enligt specifikation för elementets roll (löst)"
+msgstr "Hjälpmedelsmärkningar (ARIA) används enligt reglerna (löst)"
 
 msgid "aria-deprecated-role (unresolved)"
-msgstr "Föråldrade ARIA-roller användes ({0})"
+msgstr "Föråldrade hjälpmedelsroller (ARIA) används ({0})"
 
 msgid "aria-deprecated-role (resolved)"
-msgstr "Föråldrade ARIA-roller användes inte (löst)"
+msgstr "Inga föråldrade hjälpmedelsroller (ARIA) används (löst)"
 
 msgid "aria-hidden-body (unresolved)"
-msgstr "`[aria-hidden=\"true\"]` finns på dokumentets `<body>` ({0})"
+msgstr "Hela sidan är dold för skärmläsare ({0})"
 
 msgid "aria-hidden-body (resolved)"
-msgstr "`[aria-hidden=\"true\"]` finns inte på dokumentets `<body>` (löst)"
+msgstr "Sidan är inte dold för skärmläsare (löst)"
 
 msgid "aria-hidden-focus (unresolved)"
-msgstr "`[aria-hidden=\"true\"]`-element innehåller inte fokuserbara underordnade ({0})"
+msgstr "Dolda element går ändå att nå med tangentbordet ({0})"
 
 msgid "aria-hidden-focus (resolved)"
-msgstr "`[aria-hidden=\"true\"]`-element innehåller inte fokuserbara underordnade (löst)"
+msgstr "Dolda element går inte att nå med tangentbordet (löst)"
 
 msgid "aria-prohibited-attr (unresolved)"
-msgstr "Element ska endast använda tillåtna ARIA-attribut ({0})"
+msgstr "Vissa element har hjälpmedelsmärkningar (ARIA) som inte är tillåtna där ({0})"
 
 msgid "aria-prohibited-attr (resolved)"
-msgstr "Element använder endast tillåtna ARIA-attribut (löst)"
+msgstr "Element har bara tillåtna hjälpmedelsmärkningar (ARIA) (löst)"
 
 msgid "aria-required-attr (unresolved)"
-msgstr "`[role]` ska ha alla nödvändiga `[aria-*]`-attribut ({0})"
+msgstr "Vissa element saknar nödvändiga hjälpmedelsmärkningar (ARIA) ({0})"
 
 msgid "aria-required-attr (resolved)"
-msgstr "`[role]` har alla nödvändiga `[aria-*]`-attribut (löst)"
+msgstr "Element har de nödvändiga hjälpmedelsmärkningarna (ARIA) (löst)"
 
 msgid "aria-roles (unresolved)"
-msgstr "`[role]`-värden är inte giltiga ({0})"
+msgstr "Vissa hjälpmedelsroller (ARIA) har ogiltiga värden ({0})"
 
 msgid "aria-roles (resolved)"
-msgstr "`[role]`-värden är giltiga (löst)"
+msgstr "Hjälpmedelsroller (ARIA) har giltiga värden (löst)"
 
 msgid "aria-valid-attr-value (unresolved)"
-msgstr "`[aria-*]`-attribut har ogiltiga värden ({0})"
+msgstr "Vissa hjälpmedelsmärkningar (ARIA) har ogiltiga värden ({0})"
 
 msgid "aria-valid-attr-value (resolved)"
-msgstr "`[aria-*]`-attribut har giltiga värden (löst)"
+msgstr "Hjälpmedelsmärkningar (ARIA) har giltiga värden (löst)"
 
 msgid "aria-valid-attr (unresolved)"
-msgstr "`[aria-*]`-attribut är ogiltiga eller felstavade ({0})"
+msgstr "Vissa hjälpmedelsmärkningar (ARIA) är felstavade eller ogiltiga ({0})"
 
 msgid "aria-valid-attr (resolved)"
-msgstr "`[aria-*]`-attribut är giltiga och inte felstavade (löst)"
+msgstr "Hjälpmedelsmärkningar (ARIA) är korrekt stavade och giltiga (löst)"
 
 msgid "button-name (unresolved)"
-msgstr "Knappar ska ha ett tillgängligt namn ({0})"
+msgstr "Knappar saknar en text som skärmläsare kan läsa upp ({0})"
 
 msgid "button-name (resolved)"
-msgstr "Knappar har ett tillgängligt namn (löst)"
+msgstr "Knappar har en text som skärmläsare kan läsa upp (löst)"
 
 msgid "color-contrast (unresolved)"
-msgstr "Bakgrunds- och förgrundsfärger ska ha tillräcklig kontrast ({0})"
+msgstr "Texten har för svag kontrast mot bakgrunden och blir svårläst ({0})"
 
 msgid "color-contrast (resolved)"
-msgstr "Bakgrunds- och förgrundsfärger har tillräcklig kontrast (löst)"
+msgstr "Texten har tillräcklig kontrast mot bakgrunden (löst)"
 
 msgid "document-title (unresolved)"
-msgstr "Dokumentet ska ha ett `<title>`-element ({0})"
+msgstr "Sidan saknar en titel ({0})"
 
 msgid "document-title (resolved)"
-msgstr "Dokumentet har ett `<title>`-element (löst)"
+msgstr "Sidan har en titel (löst)"
 
 msgid "heading-order (unresolved)"
-msgstr "Rubrikelement ska visas i sekventiellt fallande ordning ({0})"
+msgstr "Rubrikerna kommer inte i rätt ordning ({0})"
 
 msgid "heading-order (resolved)"
-msgstr "Rubrikelement visas i sekventiellt fallande ordning (löst)"
+msgstr "Rubrikerna kommer i rätt ordning (löst)"
 
 msgid "html-has-lang (unresolved)"
-msgstr "`<html>`-elementet ska ha ett `[lang]`-attribut ({0})"
+msgstr "Sidan anger inte vilket språk den är skriven på ({0})"
 
 msgid "html-has-lang (resolved)"
-msgstr "`<html>`-elementet har ett `[lang]`-attribut (löst)"
+msgstr "Sidan anger vilket språk den är skriven på (löst)"
 
 msgid "html-lang-valid (unresolved)"
-msgstr "`<html>`-elementet ska ha ett giltigt värde för sitt `[lang]`-attribut ({0})"
+msgstr "Sidans språkangivelse är ogiltig ({0})"
 
 msgid "html-lang-valid (resolved)"
-msgstr "`<html>`-elementet har ett giltigt värde för sitt `[lang]`-attribut (löst)"
+msgstr "Sidans språkangivelse är giltig (löst)"
 
 msgid "image-alt (unresolved)"
-msgstr "Bildelement ska ha `[alt]`-attribut ({0})"
+msgstr "Bilder saknar alternativ text för skärmläsare ({0})"
 
 msgid "image-alt (resolved)"
-msgstr "Bildelement har `[alt]`-attribut (löst)"
+msgstr "Bilder har alternativ text för skärmläsare (löst)"
 
 msgid "image-redundant-alt (unresolved)"
-msgstr "Bildelement ska inte ha `[alt]`-attribut som är redundant text ({0})"
+msgstr "Bilders alternativtext upprepar text som redan står bredvid ({0})"
 
 msgid "image-redundant-alt (resolved)"
-msgstr "Bildelement har inte `[alt]`-attribut som är redundant text (löst)"
+msgstr "Bilders alternativtext upprepar inte text som redan står bredvid (löst)"
 
 msgid "link-in-text-block (unresolved)"
-msgstr "Länkar är inte urskiljbara utan att förlita sig på färg ({0})"
+msgstr "Länkar känns bara igen på färgen och blir svåra att se ({0})"
 
 msgid "link-in-text-block (resolved)"
-msgstr "Länkar är urskiljbara utan att förlita sig på färg (löst)"
+msgstr "Länkar känns igen även utan färg (löst)"
 
 msgid "link-name (unresolved)"
-msgstr "Länkar ska ha ett urskiljbart namn ({0})"
+msgstr "Länkar saknar en text som beskriver vart de leder ({0})"
 
 msgid "link-name (resolved)"
-msgstr "Länkar har ett urskiljbart namn (löst)"
+msgstr "Länkar har en text som beskriver vart de leder (löst)"
 
 msgid "list (unresolved)"
-msgstr "Listor ska endast innehålla `<li>`-element och skriptstödelement (`<script>` och `<template>`) ({0})"
+msgstr "Listor innehåller annat än listpunkter ({0})"
 
 msgid "list (resolved)"
-msgstr "Listor innehåller endast `<li>`-element och skriptstödelement (`<script>` och `<template>`) (löst)"
+msgstr "Listor innehåller bara listpunkter (löst)"
 
 msgid "listitem (unresolved)"
-msgstr "Listobjekt (`<li>`) är inte placerade inom `<ul>`, `<ol>` eller `<menu>`-förälderelement ({0})"
+msgstr "Listpunkter ligger utanför en riktig lista ({0})"
 
 msgid "listitem (resolved)"
-msgstr "Listobjekt (`<li>`) är placerade inom `<ul>`, `<ol>` eller `<menu>`-förälderelement (löst)"
+msgstr "Listpunkter ligger inuti en riktig lista (löst)"
 
 msgid "meta-viewport (unresolved)"
-msgstr "`[user-scalable=\"no\"]` används i `<meta name=\"viewport\">`-elementet eller `[maximum-scale]`-attributet är mindre än 5 ({0})"
+msgstr "Sidan hindrar besökaren från att zooma ({0})"
 
 msgid "meta-viewport (resolved)"
-msgstr "`[user-scalable=\"no\"]` används inte i `<meta name=\"viewport\">`-elementet och `[maximum-scale]`-attributet är inte mindre än 5 (löst)"
+msgstr "Besökaren kan zooma på sidan (löst)"
 
 msgid "target-size (unresolved)"
-msgstr "Tryckmål ska ha tillräcklig storlek och avstånd ({0})"
+msgstr "Klickytor är för små eller för tätt placerade ({0})"
 
 msgid "target-size (resolved)"
-msgstr "Tryckmål har tillräcklig storlek och avstånd (löst)"
+msgstr "Klickytor är tillräckligt stora och har avstånd (löst)"
 
 msgid "is-on-https (unresolved)"
-msgstr "Använder inte HTTPS ({0})"
+msgstr "Sidan använder inte säker anslutning (HTTPS) ({0})"
 
 msgid "is-on-https (resolved)"
-msgstr "Använder HTTPS (löst)"
+msgstr "Sidan använder säker anslutning (HTTPS) (löst)"
 
 msgid "redirects-http (unresolved)"
-msgstr "Omdirigerar inte HTTP-trafik till HTTPS ({0})"
+msgstr "Osäker trafik (HTTP) skickas inte vidare till säker (HTTPS) ({0})"
 
 msgid "redirects-http (resolved)"
-msgstr "Omdirigerar HTTP-trafik till HTTPS (löst)"
+msgstr "Osäker trafik (HTTP) skickas vidare till säker (HTTPS) (löst)"
 
 msgid "image-size-responsive (unresolved)"
-msgstr "Serverar bilder med låg upplösning ({0})"
+msgstr "Bilder visas suddiga eftersom de har för låg upplösning ({0})"
 
 msgid "image-size-responsive (resolved)"
-msgstr "Serverar bilder med låg upplösning (löst)"
+msgstr "Bilder visas skarpt med rätt upplösning (löst)"
 
 msgid "aria-required-children (unresolved)"
-msgstr "Element med en ARIA `[role]` som kräver att barn innehåller en specifik `[role]` har alla nödvändiga barn ({0})"
+msgstr "Vissa element saknar de underelement som hjälpmedel kräver ({0})"
 
 msgid "aria-required-children (resolved)"
-msgstr "Element med en ARIA `[role]` som kräver att barn innehåller en specifik `[role]` har alla nödvändiga barn (löst)"
+msgstr "Element har de underelement som hjälpmedel kräver (löst)"
 
 msgid "aria-required-parent (unresolved)"
-msgstr "`[role]` är placerade inom sitt nödvändiga förälderelement ({0})"
+msgstr "Vissa element ligger inte i det överelement som hjälpmedel kräver ({0})"
 
 msgid "aria-required-parent (resolved)"
-msgstr "`[role]` är placerade inom sitt nödvändiga förälderelement (löst)"
+msgstr "Element ligger i det överelement som hjälpmedel kräver (löst)"
 
 msgid "inspector-issues (unresolved)"
-msgstr "Problem i panelen `Issues` i Chrome Devtools ({0})"
+msgstr "Webbläsaren rapporterar problem på sidan ({0})"
 
 msgid "inspector-issues (resolved)"
-msgstr "Inga problem i panelen `Issues` i Chrome Devtools (löst)"
+msgstr "Webbläsaren rapporterar inga problem på sidan (löst)"
 
 msgid "cls-culprits-insight (unresolved)"
-msgstr "Resultat för layoutförskjutning ({0})"
+msgstr "Det som får innehållet att hoppa runt ({0})"
 
 msgid "cls-culprits-insight (resolved)"
-msgstr "Resultat för layoutförskjutning (löst)"
+msgstr "Inget får innehållet att hoppa runt (löst)"
 
 msgid "document-latency-insight (unresolved)"
-msgstr "Fördröjning av dokumentbegäran ({0})"
+msgstr "Det tar lång tid att få fram själva sidan ({0})"
 
 msgid "document-latency-insight (resolved)"
-msgstr "Fördröjning av dokumentbegäran (löst)"
+msgstr "Själva sidan hämtas snabbt (löst)"
 
 msgid "dom-size-insight (unresolved)"
-msgstr "Optimera DOM-storlek ({0})"
+msgstr "Gör sidan mindre komplex så den visas snabbare ({0})"
 
 msgid "dom-size-insight (resolved)"
-msgstr "Optimera DOM-storlek (löst)"
+msgstr "Sidan är lagom komplex (löst)"
 
 msgid "duplicated-javascript-insight (unresolved)"
-msgstr "Duplicerad JavaScript ({0})"
+msgstr "Samma programkod (JavaScript) laddas flera gånger ({0})"
 
 msgid "duplicated-javascript-insight (resolved)"
-msgstr "Duplicerad JavaScript (löst)"
+msgstr "Programkod (JavaScript) laddas inte dubbelt (löst)"
 
 msgid "font-display-insight (unresolved)"
-msgstr "Teckensnittsvisning ({0})"
+msgstr "Texten kan bli osynlig medan typsnitt laddas ({0})"
 
 msgid "font-display-insight (resolved)"
-msgstr "Teckensnittsvisning (löst)"
+msgstr "Texten syns även medan typsnitt laddas (löst)"
 
 msgid "image-delivery-insight (unresolved)"
-msgstr "Förbättra bildleveransen ({0})"
+msgstr "Bilderna kan levereras smartare så de laddar snabbare ({0})"
 
 msgid "image-delivery-insight (resolved)"
-msgstr "Förbättra bildleveransen (löst)"
+msgstr "Bilderna levereras effektivt (löst)"
 
 msgid "interaction-to-next-paint-insight (unresolved)"
-msgstr "Interaktion till nästa uppritning ({0})"
+msgstr "Sidan reagerar långsamt på klick och tryck ({0})"
 
 msgid "interaction-to-next-paint-insight (resolved)"
-msgstr "Interaktion till nästa uppritning (löst)"
+msgstr "Sidan reagerar snabbt på klick och tryck (löst)"
 
 msgid "lcp-discovery-insight (unresolved)"
-msgstr "Upptäcka LCP-begäran ({0})"
+msgstr "Huvudbilden kan hittas snabbare av webbläsaren ({0})"
 
 msgid "lcp-discovery-insight (resolved)"
-msgstr "Upptäcka LCP-begäran (löst)"
+msgstr "Webbläsaren hittar huvudbilden snabbt (löst)"
 
 msgid "lcp-phases-insight (unresolved)"
-msgstr "LCP-fördelning ({0})"
+msgstr "Genomgång av varför huvudinnehållet syns sent ({0})"
 
 msgid "lcp-phases-insight (resolved)"
-msgstr "LCP-fördelning (löst)"
+msgstr "Huvudinnehållet syns snabbt (löst)"
 
 msgid "legacy-javascript-insight (unresolved)"
-msgstr "Äldre JavaScript ({0})"
+msgstr "Gammaldags programkod skickas till moderna webbläsare ({0})"
 
 msgid "legacy-javascript-insight (resolved)"
-msgstr "Äldre JavaScript (löst)"
+msgstr "Ingen gammaldags programkod skickas i onödan (löst)"
 
 msgid "modern-http-insight (unresolved)"
-msgstr "Modern HTTP ({0})"
+msgstr "Sidan kan använda en modernare och snabbare nätverksteknik ({0})"
 
 msgid "modern-http-insight (resolved)"
-msgstr "Modern HTTP (löst)"
+msgstr "Sidan använder modern nätverksteknik (löst)"
 
 msgid "network-dependency-tree-insight (unresolved)"
-msgstr "Nätverksberoendeträd ({0})"
+msgstr "Filer laddas i en kedja efter varandra som bromsar sidan ({0})"
 
 msgid "network-dependency-tree-insight (resolved)"
-msgstr "Nätverksberoendeträd (löst)"
+msgstr "Filer laddas utan onödiga kedjor (löst)"
 
 msgid "render-blocking-insight (unresolved)"
-msgstr "Begäranden om renderingsblockering ({0})"
+msgstr "Vissa filer bromsar upp när sidan ska visas ({0})"
 
 msgid "render-blocking-insight (resolved)"
-msgstr "Begäranden om renderingsblockering (löst)"
+msgstr "Inga filer bromsar upp när sidan visas (löst)"
 
 msgid "third-parties-insight (unresolved)"
-msgstr "Tredje part ({0})"
+msgstr "Kod från andra webbplatser påverkar prestandan ({0})"
 
 msgid "third-parties-insight (resolved)"
-msgstr "Tredje part (löst)"
+msgstr "Kod från andra webbplatser påverkar inte prestandan nämnvärt (löst)"
 
 msgid "use-cache-insight (unresolved)"
-msgstr "Använd effektiva cachelivslängder ({0})"
+msgstr "Låt besökares webbläsare spara filer längre så sidan laddar snabbare ({0})"
 
 msgid "use-cache-insight (resolved)"
-msgstr "Använd effektiva cachelivslängder (löst)"
+msgstr "Besökares webbläsare sparar filer så sidan laddar snabbare (löst)"
 
 msgid "viewport-insight (unresolved)"
-msgstr "Optimera visningsområde för mobila enheter ({0})"
+msgstr "Anpassa sidan så den visas bra på mobilen ({0})"
 
 msgid "viewport-insight (resolved)"
-msgstr "Optimera visningsområde för mobila enheter (löst)"
+msgstr "Sidan visas bra på mobilen (löst)"
 
 msgid "cache-insight (unresolved)"
-msgstr "cache-insight ({0})"
+msgstr "Låt webbläsaren spara filer så sidan laddar snabbare ({0})"
 
 msgid "cache-insight (resolved)"
-msgstr "cache-insight (resolved)"
+msgstr "Webbläsaren sparar filer så sidan laddar snabbare (löst)"
 
 msgid "label-content-name-mismatch (unresolved)"
-msgstr "label-content-name-mismatch ({0})"
+msgstr "Knappens synliga text stämmer inte med den som skärmläsare läser upp ({0})"
 
 msgid "label-content-name-mismatch (resolved)"
-msgstr "label-content-name-mismatch (resolved)"
+msgstr "Knappens synliga text stämmer med den som skärmläsare läser upp (löst)"
+
+msgid "crawlable-anchors (unresolved)"
+msgstr "Vissa länkar kan inte följas av sökmotorer ({0})"
+
+msgid "crawlable-anchors (resolved)"
+msgstr "Länkar kan följas av sökmotorer (löst)"
+
+msgid "is-crawlable (unresolved)"
+msgstr "Sidan blockerar sökmotorer från att indexera den ({0})"
+
+msgid "is-crawlable (resolved)"
+msgstr "Sökmotorer kan indexera sidan (löst)"
+
+msgid "meta-description (unresolved)"
+msgstr "Sidan saknar en kort beskrivning för sökmotorer ({0})"
+
+msgid "meta-description (resolved)"
+msgstr "Sidan har en kort beskrivning för sökmotorer (löst)"
+
+msgid "errors-in-console (unresolved)"
+msgstr "Sidan visar felmeddelanden i webbläsaren ({0})"
+
+msgid "errors-in-console (resolved)"
+msgstr "Sidan visar inga felmeddelanden i webbläsaren (löst)"
+
+msgid "deprecations (unresolved)"
+msgstr "Sidan använder föråldrad teknik som snart slutar fungera ({0})"
+
+msgid "deprecations (resolved)"
+msgstr "Sidan använder inte föråldrad teknik (löst)"
+
+msgid "third-party-cookies (unresolved)"
+msgstr "Sidan använder kakor (cookies) från andra webbplatser ({0})"
+
+msgid "third-party-cookies (resolved)"
+msgstr "Sidan använder inte kakor (cookies) från andra webbplatser (löst)"
+
+msgid "lcp-breakdown-insight (unresolved)"
+msgstr "Genomgång av varför huvudinnehållet syns sent ({0})"
+
+msgid "lcp-breakdown-insight (resolved)"
+msgstr "Huvudinnehållet syns snabbt (löst)"
+
+msgid "forced-reflow-insight (unresolved)"
+msgstr "Sidan räknar om sin layout i onödan och blir trög ({0})"
+
+msgid "forced-reflow-insight (resolved)"
+msgstr "Sidan räknar inte om sin layout i onödan (löst)"
+
+msgid "image-aspect-ratio (unresolved)"
+msgstr "Bilder visas med fel proportioner och ser uttänjda ut ({0})"
+
+msgid "image-aspect-ratio (resolved)"
+msgstr "Bilder visas med rätt proportioner (löst)"
+
+msgid "tabindex (unresolved)"
+msgstr "Tangentbordsordningen på sidan är manipulerad och kan förvirra ({0})"
+
+msgid "tabindex (resolved)"
+msgstr "Tangentbordsordningen på sidan är logisk (löst)"
+
+msgid "robots-txt (unresolved)"
+msgstr "Filen som styr sökmotorer (robots.txt) har fel ({0})"
+
+msgid "robots-txt (resolved)"
+msgstr "Filen som styr sökmotorer (robots.txt) är korrekt (löst)"
+
+msgid "valid-source-maps (unresolved)"
+msgstr "Felsökningsfiler (source maps) saknas eller är ogiltiga ({0})"
+
+msgid "valid-source-maps (resolved)"
+msgstr "Felsökningsfiler (source maps) är giltiga (löst)"
+
+msgid "landmark-one-main (unresolved)"
+msgstr "Sidan saknar ett tydligt huvudområde för skärmläsare ({0})"
+
+msgid "landmark-one-main (resolved)"
+msgstr "Sidan har ett tydligt huvudområde för skärmläsare (löst)"
+
+msgid "meta-refresh (unresolved)"
+msgstr "Sidan laddas om automatiskt, vilket stör besökare ({0})"
+
+msgid "meta-refresh (resolved)"
+msgstr "Sidan laddas inte om automatiskt (löst)"
+
+msgid "http-status-code (unresolved)"
+msgstr "Servern svarar med en felkod ({0})"
+
+msgid "http-status-code (resolved)"
+msgstr "Servern svarar utan felkod (löst)"
+
+msgid "skip-link (unresolved)"
+msgstr "Sidan saknar en länk för att hoppa direkt till innehållet ({0})"
+
+msgid "skip-link (resolved)"
+msgstr "Sidan har en länk för att hoppa direkt till innehållet (löst)"
+
+msgid "doctype (unresolved)"
+msgstr "Sidan saknar en korrekt dokumenttyp (doctype) ({0})"
+
+msgid "doctype (resolved)"
+msgstr "Sidan har en korrekt dokumenttyp (doctype) (löst)"
+
+msgid "charset (unresolved)"
+msgstr "Sidan anger inte teckenkodning, vilket kan ge konstiga tecken ({0})"
+
+msgid "charset (resolved)"
+msgstr "Sidan anger teckenkodning (löst)"
+
+msgid "link-text (unresolved)"
+msgstr "Länktexter är otydliga, som \"klicka här\" ({0})"
+
+msgid "link-text (resolved)"
+msgstr "Länktexter är tydliga och beskrivande (löst)"
+
+msgid "frame-title (unresolved)"
+msgstr "Inbäddade ramar saknar en beskrivande titel ({0})"
+
+msgid "frame-title (resolved)"
+msgstr "Inbäddade ramar har en beskrivande titel (löst)"
+
+msgid "canonical (unresolved)"
+msgstr "Sidan saknar eller har fel huvudadress (canonical) för sökmotorer ({0})"
+
+msgid "canonical (resolved)"
+msgstr "Sidan har rätt huvudadress (canonical) för sökmotorer (löst)"
+
+msgid "select-name (unresolved)"
+msgstr "Rullgardinsmenyer saknar en beskrivande etikett ({0})"
+
+msgid "select-name (resolved)"
+msgstr "Rullgardinsmenyer har en beskrivande etikett (löst)"
+
+msgid "td-has-header (unresolved)"
+msgstr "Tabellceller saknar koppling till sina rubriker ({0})"
+
+msgid "td-has-header (resolved)"
+msgstr "Tabellceller är kopplade till sina rubriker (löst)"
+
+msgid "label (unresolved)"
+msgstr "Formulärfält saknar en beskrivande etikett ({0})"
+
+msgid "label (resolved)"
+msgstr "Formulärfält har en beskrivande etikett (löst)"
+
+msgid "aria-command-name (unresolved)"
+msgstr "Knappar med hjälpmedelsroll saknar ett namn för skärmläsare ({0})"
+
+msgid "aria-command-name (resolved)"
+msgstr "Knappar med hjälpmedelsroll har ett namn för skärmläsare (löst)"
+
+msgid "aria-dialog-name (unresolved)"
+msgstr "Dialogrutor saknar ett namn för skärmläsare ({0})"
+
+msgid "aria-dialog-name (resolved)"
+msgstr "Dialogrutor har ett namn för skärmläsare (löst)"
+
+msgid "aria-input-field-name (unresolved)"
+msgstr "Inmatningsfält saknar ett namn för skärmläsare ({0})"
+
+msgid "aria-input-field-name (resolved)"
+msgstr "Inmatningsfält har ett namn för skärmläsare (löst)"
+
+msgid "notification-on-start (unresolved)"
+msgstr "Sidan ber om att få skicka notiser direkt vid besök ({0})"
+
+msgid "notification-on-start (resolved)"
+msgstr "Sidan ber inte om att få skicka notiser direkt vid besök (löst)"
+
+msgid "geolocation-on-start (unresolved)"
+msgstr "Sidan ber om din plats direkt vid besök ({0})"
+
+msgid "geolocation-on-start (resolved)"
+msgstr "Sidan ber inte om din plats direkt vid besök (löst)"
+
+msgid "hreflang (unresolved)"
+msgstr "Språkversioner av sidan är felaktigt angivna ({0})"
+
+msgid "hreflang (resolved)"
+msgstr "Språkversioner av sidan är korrekt angivna (löst)"
+
+msgid "input-button-name (unresolved)"
+msgstr "Knappar i formulär saknar en text ({0})"
+
+msgid "input-button-name (resolved)"
+msgstr "Knappar i formulär har en text (löst)"
+
+msgid "definition-list (unresolved)"
+msgstr "Definitionslistor är felaktigt uppbyggda ({0})"
+
+msgid "definition-list (resolved)"
+msgstr "Definitionslistor är korrekt uppbyggda (löst)"
+
+msgid "object-alt (unresolved)"
+msgstr "Inbäddat innehåll saknar alternativ text för skärmläsare ({0})"
+
+msgid "object-alt (resolved)"
+msgstr "Inbäddat innehåll har alternativ text för skärmläsare (löst)"
+
+msgid "dlitem (unresolved)"
+msgstr "Punkter i en definitionslista ligger fel ({0})"
+
+msgid "dlitem (resolved)"
+msgstr "Punkter i en definitionslista ligger rätt (löst)"
+
+msgid "aria-progressbar-name (unresolved)"
+msgstr "Förloppsindikatorer saknar ett namn för skärmläsare ({0})"
+
+msgid "aria-progressbar-name (resolved)"
+msgstr "Förloppsindikatorer har ett namn för skärmläsare (löst)"
+
+msgid "accesskeys (unresolved)"
+msgstr "Snabbtangenter på sidan krockar med varandra ({0})"
+
+msgid "accesskeys (resolved)"
+msgstr "Snabbtangenter på sidan är unika (löst)"
+
+msgid "input-image-alt (unresolved)"
+msgstr "Bildknappar saknar alternativ text för skärmläsare ({0})"
+
+msgid "input-image-alt (resolved)"
+msgstr "Bildknappar har alternativ text för skärmläsare (löst)"
+
+msgid "valid-lang (unresolved)"
+msgstr "Språkangivelser i texten är ogiltiga ({0})"
+
+msgid "valid-lang (resolved)"
+msgstr "Språkangivelser i texten är giltiga (löst)"
+
+msgid "aria-text (unresolved)"
+msgstr "Element märkta som text är fel uppbyggda för skärmläsare ({0})"
+
+msgid "aria-text (resolved)"
+msgstr "Element märkta som text är rätt uppbyggda för skärmläsare (löst)"
+
+msgid "aria-toggle-field-name (unresolved)"
+msgstr "Av- och påreglage saknar ett namn för skärmläsare ({0})"
+
+msgid "aria-toggle-field-name (resolved)"
+msgstr "Av- och påreglage har ett namn för skärmläsare (löst)"
+
+msgid "table-fake-caption (unresolved)"
+msgstr "Tabeller använder vanliga celler i stället för en riktig rubrik ({0})"
+
+msgid "table-fake-caption (resolved)"
+msgstr "Tabeller använder en riktig rubrik (löst)"
+
+msgid "html-xml-lang-mismatch (unresolved)"
+msgstr "Sidans två språkangivelser stämmer inte överens ({0})"
+
+msgid "html-xml-lang-mismatch (resolved)"
+msgstr "Sidans språkangivelser stämmer överens (löst)"
+
+msgid "presentation-role-conflict (unresolved)"
+msgstr "Element märkta som dekoration har egenskaper som motsäger det ({0})"
+
+msgid "presentation-role-conflict (resolved)"
+msgstr "Element märkta som dekoration har inga motstridiga egenskaper (löst)"
+
+msgid "paste-preventing-inputs (unresolved)"
+msgstr "Inmatningsfält hindrar besökare från att klistra in text ({0})"
+
+msgid "paste-preventing-inputs (resolved)"
+msgstr "Inmatningsfält låter besökare klistra in text (löst)"
+
+msgid "inp-breakdown-insight (unresolved)"
+msgstr "Sidan svarar långsamt på klick och tangenttryck ({0})"
+
+msgid "inp-breakdown-insight (resolved)"
+msgstr "Ingen långsam respons på klick och tangenttryck uppmättes (löst)"
+
+msgid "aria-meter-name (unresolved)"
+msgstr "Mätare saknar ett namn för skärmläsare ({0})"
+
+msgid "aria-meter-name (resolved)"
+msgstr "Mätare har ett namn för skärmläsare (löst)"
+
+msgid "aria-tooltip-name (unresolved)"
+msgstr "Inforutor (tooltips) saknar ett namn för skärmläsare ({0})"
+
+msgid "aria-tooltip-name (resolved)"
+msgstr "Inforutor (tooltips) har ett namn för skärmläsare (löst)"
+
+msgid "aria-treeitem-name (unresolved)"
+msgstr "Poster i trädmenyer saknar ett namn för skärmläsare ({0})"
+
+msgid "aria-treeitem-name (resolved)"
+msgstr "Poster i trädmenyer har ett namn för skärmläsare (löst)"
+
+msgid "td-headers-attr (unresolved)"
+msgstr "Tabellceller hänvisar till rubriker utanför sin egen tabell ({0})"
+
+msgid "td-headers-attr (resolved)"
+msgstr "Tabellceller hänvisar till rubriker i sin egen tabell (löst)"
+
+msgid "autocomplete-valid (unresolved)"
+msgstr "Formulärfält har ogiltiga värden för automatisk ifyllning ({0})"
+
+msgid "autocomplete-valid (resolved)"
+msgstr "Formulärfält har giltiga värden för automatisk ifyllning (löst)"
+
+msgid "svg-img-alt (unresolved)"
+msgstr "SVG-bilder saknar alternativ text för skärmläsare ({0})"
+
+msgid "svg-img-alt (resolved)"
+msgstr "SVG-bilder har alternativ text för skärmläsare (löst)"
+
+msgid "csp-xss (unresolved)"
+msgstr "Säkerhetspolicyn (CSP) skyddar inte tillräckligt mot XSS-attacker ({0})"
+
+msgid "csp-xss (resolved)"
+msgstr "Säkerhetspolicyn (CSP) skyddar mot XSS-attacker (löst)"
+
+msgid "has-hsts (unresolved)"
+msgstr "Sidan saknar HSTS eller har en svag HSTS-inställning ({0})"
+
+msgid "has-hsts (resolved)"
+msgstr "Sidan har en stark HSTS-inställning (löst)"
+
+msgid "origin-isolation (unresolved)"
+msgstr "Sidan isolerar sig inte från andra webbplatsers fönster (COOP) ({0})"
+
+msgid "origin-isolation (resolved)"
+msgstr "Sidan isolerar sig från andra webbplatsers fönster (COOP) (löst)"
+
+msgid "clickjacking-mitigation (unresolved)"
+msgstr "Sidan saknar skydd mot att bäddas in av andra webbplatser ({0})"
+
+msgid "clickjacking-mitigation (resolved)"
+msgstr "Sidan har skydd mot att bäddas in av andra webbplatser (löst)"
+
+msgid "trusted-types-xss (unresolved)"
+msgstr "Sidan använder inte Trusted Types mot XSS i JavaScript ({0})"
+
+msgid "trusted-types-xss (resolved)"
+msgstr "Sidan använder Trusted Types mot XSS i JavaScript (löst)"
+
+msgid "non-composited-animations (unresolved)"
+msgstr "Animeringar körs utan grafikkortets hjälp och kan hacka ({0})"
+
+msgid "non-composited-animations (resolved)"
+msgstr "Animeringar körs med grafikkortets hjälp (löst)"
+
+msgid "bypass (unresolved)"
+msgstr "Sidan saknar sätt att hoppa förbi upprepat innehåll, som en hopplänk ({0})"
+
+msgid "bypass (resolved)"
+msgstr "Sidan har sätt att hoppa förbi upprepat innehåll (löst)"
+
+msgid "empty-heading (unresolved)"
+msgstr "Rubriker saknar text ({0})"
+
+msgid "empty-heading (resolved)"
+msgstr "Rubriker har text (löst)"
+
+msgid "identical-links-same-purpose (unresolved)"
+msgstr "Länkar med samma text leder till olika mål ({0})"
+
+msgid "identical-links-same-purpose (resolved)"
+msgstr "Länkar med samma text leder till samma mål (löst)"
+
+msgid "table-duplicate-name (unresolved)"
+msgstr "Tabeller har samma text i rubrik och sammanfattning ({0})"
+
+msgid "table-duplicate-name (resolved)"
+msgstr "Tabeller har olika text i rubrik och sammanfattning (löst)"
+
+msgid "duplicate-id-aria (unresolved)"
+msgstr "Id som skärmläsare använder förekommer flera gånger ({0})"
+
+msgid "duplicate-id-aria (resolved)"
+msgstr "Id som skärmläsare använder är unika (löst)"
+
+msgid "form-field-multiple-labels (unresolved)"
+msgstr "Formulärfält har flera etiketter ({0})"
+
+msgid "form-field-multiple-labels (resolved)"
+msgstr "Formulärfält har en etikett var (löst)"
+
+msgid "th-has-data-cells (unresolved)"
+msgstr "Tabellrubriker saknar celler att beskriva ({0})"
+
+msgid "th-has-data-cells (resolved)"
+msgstr "Tabellrubriker beskriver celler i tabellen (löst)"
+
+msgid "video-caption (unresolved)"
+msgstr "Videor saknar undertexter ({0})"
+
+msgid "video-caption (resolved)"
+msgstr "Videor har undertexter (löst)"
+
+msgid "baseline (unresolved)"
+msgstr "Webbfunktioner på sidan och hur brett webbläsare stöder dem (Baseline) ({0})"
+
+msgid "baseline (resolved)"
+msgstr "Webbfunktioner på sidan och hur brett webbläsare stöder dem (Baseline) (löst)"
+
+msgid "user-timings (unresolved)"
+msgstr "Sidans egna tidsmätningar (User Timing) ({0})"
+
+msgid "user-timings (resolved)"
+msgstr "Sidans egna tidsmätningar (User Timing) (löst)"
+
+msgid "js-libraries (unresolved)"
+msgstr "JavaScript-bibliotek som hittades på sidan ({0})"
+
+msgid "js-libraries (resolved)"
+msgstr "JavaScript-bibliotek som hittades på sidan (löst)"

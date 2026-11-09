@@ -196,6 +196,18 @@ msgstr "Krev at `id` er en gyldig identifikator ({0})"
 msgid "valid-id (resolved)"
 msgstr "Krev at `id` er en gyldig identifikator (løst)"
 
+msgid "id-pattern (unresolved)"
+msgstr "Krev at `id` bare inneholder vanlige tegn ({0})"
+
+msgid "id-pattern (resolved)"
+msgstr "Krev at `id` bare inneholder vanlige tegn (løst)"
+
+msgid "no-missing-references (unresolved)"
+msgstr "Ikke tillat henvisninger til ID-er som mangler ({0})"
+
+msgid "no-missing-references (resolved)"
+msgstr "Ikke tillat henvisninger til ID-er som mangler (løst)"
+
 msgid "void-content (unresolved)"
 msgstr "Ikke tillat void-elementer med innhold ({0})"
 
@@ -203,13 +215,13 @@ msgid "void-content (resolved)"
 msgstr "Ikke tillat void-elementer med innhold (løst)"
 
 msgid "parser-error (unresolved)"
-msgstr "parser-error ({0})"
+msgstr "Tillat ikke tolkningsfeil i HTML ({0})"
 
 msgid "parser-error (resolved)"
-msgstr "parser-error (resolved)"
+msgstr "Tillat ikke tolkningsfeil i HTML (løst)"
 
 msgid "no-network (unresolved)"
-msgstr "no-network ({0})"
+msgstr "Testen kunne ikke nå nettstedet ({0})"
 
 msgid "no-network (resolved)"
-msgstr "no-network (resolved)"
+msgstr "Testen kunne ikke nå nettstedet (løst)"

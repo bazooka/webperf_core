@@ -13,12 +13,14 @@ on:
       - '**regression-test-404.yml'
       - '**regression-test-a11y-statement.yml'
       - '**regression-test-css.yml'
+      - '**regression-test-dns.yml'
       - '**regression-test-docker-image.yml'
       - '**regression-test-email.yml'
       - '**regression-test-html.yml'
       - '**regression-test-http.yml'
       - '**regression-test-lint-css.yml'
       - '**regression-test-pa11y.yml'
+      - '**regression-test-privacy.yml'
       - '**regression-test-sitespeed-browsertime-har.yml'
       - '**regression-test-sitespeed.yml'
       - '**regression-test-software.yml'
@@ -26,6 +28,9 @@ on:
       - '**regression-test-tracking.yml'
       - '**regression-test-translations.yml'
       - '**regression-test-webbkoll.yml'
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -35,24 +40,26 @@ jobs:
                 version: [30]
     steps:
     - name: Check out repository code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
     - name: Setup python
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@v7
       with:
         python-version: '3.13' # Version range or exact version of a Python version to use, using SemVer's version range syntax
         architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
     - name: Setup dependencies using pip
       run: pip install -r requirements.txt
     - name: Setup Node.js (v4 version 24.x)
-      uses: actions/setup-node@v6
+      uses: actions/setup-node@v7
       with:
         node-version: '24.x'
+        check-latest: true
     - if: ${{ matrix.os == 'ubuntu-latest' }}
       shell: bash
       name: Setup Google Chrome browser (ONLY used for Sitespeed)
       run: |
-        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-        sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+        sudo install -d -m 0755 /etc/apt/keyrings
+        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --batch --dearmor --yes -o /etc/apt/keyrings/google-chrome.gpg
+        echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] https://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list > /dev/null
         sudo apt-get update
         sudo apt-get --only-upgrade install google-chrome-stable
         google-chrome --version

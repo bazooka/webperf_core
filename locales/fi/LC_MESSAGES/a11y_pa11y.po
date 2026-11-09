@@ -39,13 +39,16 @@ msgid "TEXT_REVIEW_A11Y_TOO_MANY_PROBLEMS"
 msgstr "- Info: Liian monta ainutlaatuista ongelmaa listattavaksi.\n"
 
 msgid "TEXT_REVIEW_A11Y_PROBLEMS"
-msgstr "\n##### Problem:\n"
+msgstr "\n##### Ongelmat:\n"
 
 msgid "TEXT_REVIEW_ERRORS_ITEM"
-msgstr "  - {0} (totalt {1} st)\n"
+msgstr "  - {0} (yhteensä {1} kpl)\n"
 
 msgid "TEXT_REVIEW_RATING_GROUPED"
 msgstr "- Ryhmiteltyjen virheiden määrä: {0}"
 
 msgid "TEXT_REVIEW_RATING_ITEMS"
 msgstr "- Virheiden määrä: {0}"
+
+msgid "TEXT_REVIEW_NEEDS_MANUAL_REVIEW"
+msgstr "Vaatii manuaalisen tarkistuksen: automaattinen testi ei pystynyt päättelemään, onko tämä ongelma. Pyydä saavutettavuuden asiantuntijaa tarkistamaan asia."

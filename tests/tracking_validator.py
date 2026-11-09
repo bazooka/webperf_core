@@ -10,6 +10,7 @@ from datetime import datetime, timedelta, date
 from helpers.models import Rating
 from helpers.setting_helper import get_config
 from helpers.browser_helper import get_chromium_browser
+from helpers.sitespeed_helper import get_first_page_entries
 from tests.utils import get_best_country_code, get_friendly_url_name,\
     get_translation, is_country_code_in_eu_or_on_exception_list
 from tests.sitespeed_base import get_result
@@ -802,29 +803,49 @@ def get_rating_from_sitespeed(url, local_translation, global_translation):
     if http_archive_content is None:
         return rating
 
+    # Filter the recording to the tested website's own page before rating,
+    # so requests recorded from another page (for example a concurrent
+    # browsertime run in the same browser session after a crossed DevTools
+    # port) aren't attributed to the tested website.
+    try:
+        har_data = json.loads(http_archive_content)
+        entries = get_first_page_entries(har_data, origin_domain)
+
+        # fail if the recording isn't of the tested website
+        if entries is None:
+            return rating
+
+        if 'log' in har_data:
+            har_data['log']['entries'] = entries
+        else:
+            har_data['entries'] = entries
+        http_archive_content = json.dumps(har_data)
+    except json.JSONDecodeError:
+        return rating
+
     # TODO: Read sitespeed manual on how to return localStorage
 
     # - Cookies ( 5.00 rating )
-    rating += rate_cookies(http_archive_content, url, local_translation, _)
+    rating += rate_cookies(http_archive_content, url, local_translation, global_translation)
 
     # - GDPR and Schrems ( 5.00 rating )
-    rating += rate_gdpr_and_schrems(http_archive_content, local_translation, _)
+    rating += rate_gdpr_and_schrems(http_archive_content, local_translation, global_translation)
 
     website_urls = get_urls_from_har(http_archive_content)
 
     # - Tracking ( 5.00 rating )
     try:
-        rating += rate_tracking(website_urls, local_translation, _)
+        rating += rate_tracking(website_urls, local_translation, global_translation)
     except Exception as ex:
         print('tracking exception', ex)
     # - Fingerprinting/Identifying technique ( 5.00 rating )
     try:
-        rating += rate_fingerprint(website_urls, local_translation, _)
+        rating += rate_fingerprint(website_urls, local_translation, global_translation)
     except Exception as ex:
         print('fingerprint exception', ex)
     # - Ads ( 5.00 rating )
     try:
-        rating += rate_ads(website_urls, local_translation, _)
+        rating += rate_ads(website_urls, local_translation, global_translation)
     except Exception as ex:
         print('ads exception', ex)
 

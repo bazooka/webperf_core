@@ -73,7 +73,7 @@ msgid "TEXT_TEST_VALID_ARGUMENTS_STANDARD_FILES"
 msgstr "-t 9\t: Vakiotiedostot"
 
 msgid "TEXT_TEST_VALID_ARGUMENTS_HTTP"
-msgstr "-t 21\t: HTTP & nätverk"
+msgstr "-t 21\t: HTTP & verkko"
 
 msgid "TEXT_TEST_VALID_ARGUMENTS_ENERGY_EFFICIENCY"
 msgstr "-t 22\t: Energiatehokkuus"
@@ -91,16 +91,19 @@ msgid "TEXT_TEST_VALID_ARGUMENTS_A11Y_STATEMENT"
 msgstr "-t 26\t: Saavutettavuusseloste (Alfa)"
 
 msgid "TEXT_TEST_VALID_ARGUMENTS_CSS_LINT"
-msgstr "-t 27\t: CSS-validering (Stylelint)"
+msgstr "-t 27\t: CSS-validointi (Stylelint)"
 
 msgid "TEXT_TEST_VALID_ARGUMENTS_HTML_LINT"
-msgstr "-t 28\t: HTML-validering (html-validate)"
+msgstr "-t 28\t: HTML-validointi (html-validate)"
 
 msgid "TEXT_TEST_VALID_ARGUMENTS_JS_LINT"
 msgstr "-t 29\t: JS Lint (ESLint)"
 
 msgid "TEXT_TEST_VALID_ARGUMENTS_GOOGLE_LIGHTHOUSE"
 msgstr "-t 30\t: Saavutettavuus, hyvät käytännöt, suorituskyky ja hakukoneoptimointi (Lighthouse)"
+
+msgid "TEXT_TEST_VALID_ARGUMENTS_PRIVACY"
+msgstr "-t 31\t: Yksityisyys (Webbkoll)"
 
 msgid "TEXT_COMMAND_USAGE"
 msgstr "\n\tWebPerf Core\n\n\tKäyttö:\n\tdefault.py -u https://webperf.se\n\n\tValinnat ja argumentit:\n\t-h/--help\t\t\t: Ohje ja skriptin käyttö\n\t-u/--url <site url>\t\t: testattavan verkkosivuston osoite\n\t-t/--test <test nummer>\t\t: suorita tietty testi (anna ? listätäksesi käytettävissä olevat testit)\n\t-r/--review\t\t\t: näyttää arviot suoraan terminaalissa\n\t-i/--input <file path>\t\t: syötetiedoston polku (.json/.sqlite)\n\t-i/--input-skip <nummer>\t: ohitettavien määrä\n\t-i/--input-take <nummer>\t: testattavien määrä\n\t-o/--output <file path>\t\t: tulostiedoston polku (.json/.csv/.sql/.sqlite/.md)\n\t-A/--addUrl <site url>\t\t: verkkosivuston osoite/url (vaatimus kun käytät -i/--input)\n\t-D/--deleteUrl <site url>\t: verkkosivuston osoite/url (vaatimus kun käytät -i/--input)\n\t-L/--language <lang code>\t: tulosteessa käytettävä kieli(en = default/sv)\n\t--setting <avain>=<arvo>\t: Käytä asetusta nykyiseen ajoon\n\t\t\t\t\t  (anna ? listätäksesi käytettävissä olevat asetukset)\n\t--save-setting <tiedostonimi>\t: Luo oma asetustiedosto nykyisistä asetuksista\n\t\t\t\t\t  (Sinun tulisi käyttää 'settings.json')\n\t-c/--credits/--contributors\t: Näytä projektit ja ihmiset joille olemme kiitollisia\n\n\n\tLisävalinnat ja argumentit:\n\t--dependency\t\t\t: Validates your installation of WebPerf_core\n\t--find-unknown-sources\t\t: Filters out interesting software from software-unknown-sources.json\n\t--update-credits\t\t: Updates CREDITS.md\n\t--update-browser\t\t: Updates general.useragent in defaults/settings.json\n\t--update-definitions <api-key>\t: Updates software info in defaults/software-sources.json\n\t--update-carbon <file path>\t: Updates carbon percentile in energy_efficiency_carbon_percentiles.py\n\t--update-translations\t\t: Validates and updates translation files\n\t--prepare-release\t\t: Updates package.json in preparation of new release\n\t--create-release\t\t: Creates new release for github and docker hub"
@@ -118,7 +121,7 @@ msgid "TEXT_TEST_REVIEW_ALLY"
 msgstr "#### Saavutettavuus:\r\n{0}"
 
 msgid "TEXT_TEST_REVIEW_STANDARDS"
-msgstr "#### Standarder:\r\n{0}"
+msgstr "#### Standardit:\r\n{0}"
 
 msgid "TEXT_TEST_REVIEW_RATING_ITEM"
 msgstr "{0} ( {1:.2f} arvosana )\r\n"
@@ -136,7 +139,7 @@ msgid "TEXT_TEST_RATING_ALLY"
 msgstr "- Saavutettavuus: {0}\r\n"
 
 msgid "TEXT_TEST_RATING_STANDARDS"
-msgstr "- Standarder: {0}\r\n"
+msgstr "- Standardit: {0}\r\n"
 
 msgid "TEXT_REQUEST_UNKNOWN"
 msgstr "#{0}: "
@@ -161,3 +164,9 @@ msgstr "varoitus"
 
 msgid "TEXT_SEVERITY_RESOLVED"
 msgstr "ratkaistu"
+
+msgid "TEXT_TEST_VALID_ARGUMENTS_DNS"
+msgstr "-t 32\t: DNS (Zonemaster)"
+
+msgid "TEXT_SEVERITY_NOTICE"
+msgstr "huomautus"

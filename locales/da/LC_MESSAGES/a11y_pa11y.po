@@ -39,13 +39,16 @@ msgid "TEXT_REVIEW_A11Y_TOO_MANY_PROBLEMS"
 msgstr "- Info: For mange unikke problemer til at liste dem alle.\n"
 
 msgid "TEXT_REVIEW_A11Y_PROBLEMS"
-msgstr "\n##### Problem:\n"
+msgstr "\n##### Problemer:\n"
 
 msgid "TEXT_REVIEW_ERRORS_ITEM"
-msgstr "  - {0} (totalt {1} st)\n"
+msgstr "  - {0} (i alt {1} stk.)\n"
 
 msgid "TEXT_REVIEW_RATING_GROUPED"
 msgstr "- Antal grupperede fejl: {0}"
 
 msgid "TEXT_REVIEW_RATING_ITEMS"
 msgstr "- Antal fejl: {0}"
+
+msgid "TEXT_REVIEW_NEEDS_MANUAL_REVIEW"
+msgstr "Kræver manuel gennemgang: den automatiske test kunne ikke afgøre, om dette er et problem. Lad en person med ekspertise i tilgængelighed kontrollere det."

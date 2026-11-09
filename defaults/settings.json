@@ -13,12 +13,13 @@
             "details": false,
             "improve-only": true
         },
-        "useragent": "Mozilla/5.0 (X11; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0",
+        "useragent": "Mozilla/5.0 (X11; Linux x86_64; rv:158.0) Gecko/20100101 Firefox/158.0",
         "cache": {
             "use": false,
             "folder": "cache",
             "max-age": 60
-        }
+        },
+        "failures-log": "failures.log"
     },
     "github": {
         "api": {
@@ -61,7 +62,19 @@
             "override-url": true
         },
         "webbkoll": {
-            "sleep": 20
+            "sleep": 20,
+            "api-url": "http://localhost:8100"
+        },
+        "dns": {
+            "image": "zonemaster/cli",
+            "timeout": 180,
+            "ipv6": false,
+            "registrable": true,
+            "warning-penalty": 0.75,
+            "error-penalty": 1.5,
+            "profile": {
+                "use": false
+            }
         }
     }
 }

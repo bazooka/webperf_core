@@ -1,4 +1,4 @@
-FROM sitespeedio/sitespeed.io:39.5.0
+FROM sitespeedio/sitespeed.io:42.10.0
 
 USER root
 
@@ -16,6 +16,14 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # phantomas should pick this up and use --no-sandbox
 ENV LAMBDA_TASK_ROOT=/trick/phantomas
+
+# Chrome in webbkoll-backend (test 31) can't set up its sandbox in a container
+# started with plain `docker run`: Docker's default seccomp profile blocks the
+# user namespaces it needs. Run it without the sandbox, as pa11y already does
+# here; the container and the sitespeedio user are the boundary instead.
+# To keep the sandbox, run with --cap-add=SYS_ADMIN (or
+# --security-opt seccomp=unconfined) and -e CHROMIUM_NO_SANDBOX=
+ENV CHROMIUM_NO_SANDBOX=1
 
 RUN apt-get update &&\
     apt-get install -y --no-install-recommends curl gcc g++ gnupg unixodbc-dev openssl git default-jre default-jdk && \

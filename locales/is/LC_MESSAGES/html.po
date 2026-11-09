@@ -196,6 +196,18 @@ msgstr "Krefjast þess að `id` sé gilt auðkenni ({0})"
 msgid "valid-id (resolved)"
 msgstr "Krefjast þess að `id` sé gilt auðkenni (leyst)"
 
+msgid "id-pattern (unresolved)"
+msgstr "Krefjast þess að `id` innihaldi aðeins algeng tákn ({0})"
+
+msgid "id-pattern (resolved)"
+msgstr "Krefjast þess að `id` innihaldi aðeins algeng tákn (leyst)"
+
+msgid "no-missing-references (unresolved)"
+msgstr "Ekki leyfa tilvísanir í auðkenni sem vantar ({0})"
+
+msgid "no-missing-references (resolved)"
+msgstr "Ekki leyfa tilvísanir í auðkenni sem vantar (leyst)"
+
 msgid "void-content (unresolved)"
 msgstr "Ekki leyfa void-einingar með innihaldi ({0})"
 
@@ -203,13 +215,13 @@ msgid "void-content (resolved)"
 msgstr "Ekki leyfa void-einingar með innihaldi (leyst)"
 
 msgid "parser-error (unresolved)"
-msgstr "parser-error ({0})"
+msgstr "Ekki leyfa þáttunarvillur í HTML ({0})"
 
 msgid "parser-error (resolved)"
-msgstr "parser-error (resolved)"
+msgstr "Ekki leyfa þáttunarvillur í HTML (leyst)"
 
 msgid "no-network (unresolved)"
-msgstr "no-network ({0})"
+msgstr "Prófið náði ekki til vefsvæðisins ({0})"
 
 msgid "no-network (resolved)"
-msgstr "no-network (resolved)"
+msgstr "Prófið náði ekki til vefsvæðisins (leyst)"
