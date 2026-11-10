@@ -35,7 +35,7 @@ on:
         type: string
 
 env:
-  TEST_TAG: webperfse/webperf-core:test
+  TEST_TAG: webperfse/webperf-core:latest
 
 jobs:
   build:
@@ -43,19 +43,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v3
-
-      - name: Setup Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Build the Docker image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          platforms: linux/amd64
-          load: true
-          tags: ${{ env.TEST_TAG }}
+      - name: Pull Docker image
+        run: docker pull ${{ env.TEST_TAG }}
 
       - name: Run selected tests
         run: |
