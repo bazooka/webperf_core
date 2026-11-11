@@ -71,20 +71,32 @@ jobs:
 
           serial_set = set()
           for s in re.split(r"[\s,]+", raw_serial):
-              if s.isdigit() or (s.startswith("+") and s[1:].isdigit()):
+              try:
                   serial_set.add(int(s))
+              except ValueError:
+                  pass
 
-          seen = set()
-          ordered_tests = []
+          test_types = []
+          remove_tests = set()
+
           for t in re.split(r"[\s,]+", raw_tests):
-              if t.isdigit() or (t.startswith("+") and t[1:].isdigit()):
+              if not t:
+                  continue
+              try:
                   val = int(t)
-                  if val not in seen:
-                      seen.add(val)
-                      ordered_tests.append(str(val))
+                  if val > 0:
+                      if val not in test_types:
+                          test_types.append(val)
+                  elif val < 0:
+                      remove_tests.add(abs(val))
+              except ValueError:
+                  pass
 
-          parallel = [t for t in ordered_tests if int(t) not in serial_set]
-          serial = [t for t in ordered_tests if int(t) in serial_set]
+          # Exclude any negative test IDs
+          test_types = [t for t in test_types if t not in remove_tests]
+
+          parallel = [str(t) for t in test_types if t not in serial_set]
+          serial = [str(t) for t in test_types if t in serial_set]
 
           github_output = os.environ.get("GITHUB_OUTPUT")
           if github_output:
