@@ -97,6 +97,8 @@ jobs:
 
           # Exclude any negative test IDs
           test_types = [t for t in test_types if t not in remove_tests]
+          if not test_types:
+              raise SystemExit("No tests selected. Specify at least one supported positive test ID that is not excluded.")
 
           parallel = [str(t) for t in test_types if t not in serial_set]
           serial = [str(t) for t in test_types if t in serial_set]
