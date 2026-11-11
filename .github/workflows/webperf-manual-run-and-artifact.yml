@@ -1,4 +1,5 @@
 name: "Manual - Run test against url (with artifact)"
+run-name: ${{ inputs.correlation_id != '' && format('Webperf {0}', inputs.correlation_id) || format('Webperf test on {0}', inputs.url) }}
 
 on:
   workflow_dispatch:
@@ -12,6 +13,16 @@ on:
         description: 'Test to run, comma separated list of numbers'
         required: true
         default: '2,9,15,18,20,21,22,23,24,25,26,27,28,29,30'
+        type: string
+      max_parallel:
+        description: 'Max tests running in parallel'
+        required: false
+        default: 4
+        type: number
+      correlation_id:
+        description: 'Caller-supplied id, shown in the run name'
+        required: false
+        default: ''
         type: string
       language:
         description: 'Setting general.language'
@@ -36,39 +47,121 @@ on:
 
 env:
   TEST_TAG: webperfse/webperf-core:latest
+  SERIAL_TESTS: '15,22,30'
+
+permissions:
+  contents: read
 
 jobs:
-  build:
+  prepare:
     runs-on: ubuntu-latest
+    outputs:
+      parallel: ${{ steps.split.outputs.parallel }}
+      serial: ${{ steps.split.outputs.serial }}
     steps:
-      - uses: actions/checkout@v6
+      - id: split
+        env:
+          TESTS: ${{ inputs.test }}
+        run: |
+          lines() { echo "$1" | tr ',' '\n' | tr -d ' '; }
+          to_json() { jq -Rsc 'split("\n") | map(select(length > 0))'; }
+          serial=$(lines "$TESTS" | grep -xFf <(lines "$SERIAL_TESTS") || true)
+          parallel=$(lines "$TESTS" | grep -vxFf <(lines "$SERIAL_TESTS") || true)
+          echo "serial=$(echo "$serial" | to_json)" >> "$GITHUB_OUTPUT"
+          echo "parallel=$(echo "$parallel" | to_json)" >> "$GITHUB_OUTPUT"
 
+  run-parallel:
+    needs: prepare
+    if: ${{ needs.prepare.outputs.parallel != '[]' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        test: ${{ fromJSON(needs.prepare.outputs.parallel) }}
+    steps:
       - name: Pull Docker image
-        run: docker pull ${{ env.TEST_TAG }}
+        run: docker pull "$TEST_TAG"
 
-      - name: Run selected tests
+      - name: Run test ${{ matrix.test }}
+        shell: bash
+        env:
+          TEST: ${{ matrix.test }}
+          TARGET_URL: ${{ inputs.url }}
+          LANGUAGE: ${{ inputs.language }}
+          DETAILS: ${{ inputs.details }}
+          DATA: ${{ inputs.data }}
+          IMPROVE: ${{ inputs.improve }}
         run: |
-          docker run ${{ env.TEST_TAG }} \
+          docker run "$TEST_TAG" \
             python default.py \
-              -t ${{ github.event.inputs.test }} \
+              -t "$TEST" \
               -r \
-              --setting general.review.details=${{ github.event.inputs.details }} \
-              --setting general.review.data=${{ github.event.inputs.data }} \
-              --setting general.review.improve-only=${{ github.event.inputs.improve }} \
-              --setting general.language=${{ github.event.inputs.language }} \
-              -u ${{ github.event.inputs.url }} \
+              --setting general.review.details="$DETAILS" \
+              --setting general.review.data="$DATA" \
+              --setting general.review.improve-only="$IMPROVE" \
+              --setting general.language="$LANGUAGE" \
+              -u "$TARGET_URL" \
             | tee results.txt
-
-      - name: Get list of available tests
-        run: |
-          docker run ${{ env.TEST_TAG }} python default.py -t ? > available-tests.txt
 
       - name: Upload test results as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: webperf-results
+          name: webperf-results-${{ matrix.test }}
           path: results.txt
           retention-days: 1
+
+  run-serial:
+    needs: [prepare, run-parallel]
+    if: ${{ always() && needs.prepare.result == 'success' && !cancelled() && needs.prepare.outputs.serial != '[]' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        test: ${{ fromJSON(needs.prepare.outputs.serial) }}
+    steps:
+      - name: Pull Docker image
+        run: docker pull "$TEST_TAG"
+
+      - name: Run test ${{ matrix.test }}
+        shell: bash
+        env:
+          TEST: ${{ matrix.test }}
+          TARGET_URL: ${{ inputs.url }}
+          LANGUAGE: ${{ inputs.language }}
+          DETAILS: ${{ inputs.details }}
+          DATA: ${{ inputs.data }}
+          IMPROVE: ${{ inputs.improve }}
+        run: |
+          docker run "$TEST_TAG" \
+            python default.py \
+              -t "$TEST" \
+              -r \
+              --setting general.review.details="$DETAILS" \
+              --setting general.review.data="$DATA" \
+              --setting general.review.improve-only="$IMPROVE" \
+              --setting general.language="$LANGUAGE" \
+              -u "$TARGET_URL" \
+            | tee results.txt
+
+      - name: Upload test results as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: webperf-results-${{ matrix.test }}
+          path: results.txt
+          retention-days: 1
+
+  available-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull Docker image
+        run: docker pull "$TEST_TAG"
+
+      - name: Get list of available tests
+        run: docker run "$TEST_TAG" python default.py -t ? > available-tests.txt
 
       - name: Upload available tests as artifact
         uses: actions/upload-artifact@v4
