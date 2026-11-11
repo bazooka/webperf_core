@@ -68,11 +68,14 @@ jobs:
 
           raw_tests = os.environ.get("TESTS", "")
           raw_serial = os.environ.get("SERIAL_TESTS", "15,22,30")
+          valid_tests = {2, 9, 15, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32}
 
           serial_set = set()
           for s in re.split(r"[\s,]+", raw_serial):
               try:
-                  serial_set.add(int(s))
+                  val = int(s)
+                  if val in valid_tests:
+                      serial_set.add(val)
               except ValueError:
                   pass
 
@@ -84,10 +87,10 @@ jobs:
                   continue
               try:
                   val = int(t)
-                  if val > 0:
+                  if val in valid_tests:
                       if val not in test_types:
                           test_types.append(val)
-                  elif val < 0:
+                  elif val < 0 and abs(val) in valid_tests:
                       remove_tests.add(abs(val))
               except ValueError:
                   pass
@@ -141,6 +144,7 @@ jobs:
             | tee results.txt
 
       - name: Upload test results as artifact
+        if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
         with:
           name: webperf-results-${{ matrix.test }}
@@ -183,6 +187,7 @@ jobs:
             | tee results.txt
 
       - name: Upload test results as artifact
+        if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
         with:
           name: webperf-results-${{ matrix.test }}
