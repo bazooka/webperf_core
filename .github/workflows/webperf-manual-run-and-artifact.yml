@@ -63,12 +63,35 @@ jobs:
         env:
           TESTS: ${{ inputs.test }}
         run: |
-          lines() { echo "$1" | tr ',' '\n' | tr -d ' '; }
-          to_json() { jq -Rsc 'split("\n") | map(select(length > 0))'; }
-          serial=$(lines "$TESTS" | grep -xFf <(lines "$SERIAL_TESTS") || true)
-          parallel=$(lines "$TESTS" | grep -vxFf <(lines "$SERIAL_TESTS") || true)
-          echo "serial=$(echo "$serial" | to_json)" >> "$GITHUB_OUTPUT"
-          echo "parallel=$(echo "$parallel" | to_json)" >> "$GITHUB_OUTPUT"
+          python3 -c '
+          import json, os, re
+
+          raw_tests = os.environ.get("TESTS", "")
+          raw_serial = os.environ.get("SERIAL_TESTS", "15,22,30")
+
+          serial_set = set()
+          for s in re.split(r"[\s,]+", raw_serial):
+              if s.isdigit() or (s.startswith("+") and s[1:].isdigit()):
+                  serial_set.add(int(s))
+
+          seen = set()
+          ordered_tests = []
+          for t in re.split(r"[\s,]+", raw_tests):
+              if t.isdigit() or (t.startswith("+") and t[1:].isdigit()):
+                  val = int(t)
+                  if val not in seen:
+                      seen.add(val)
+                      ordered_tests.append(str(val))
+
+          parallel = [t for t in ordered_tests if int(t) not in serial_set]
+          serial = [t for t in ordered_tests if int(t) in serial_set]
+
+          github_output = os.environ.get("GITHUB_OUTPUT")
+          if github_output:
+              with open(github_output, "a") as f:
+                  f.write(f"parallel={json.dumps(parallel)}\n")
+                  f.write(f"serial={json.dumps(serial)}\n")
+          '
 
   run-parallel:
     needs: prepare
@@ -77,7 +100,7 @@ jobs:
     timeout-minutes: 30
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: ${{ fromJSON(inputs.max_parallel || 4) }}
       matrix:
         test: ${{ fromJSON(needs.prepare.outputs.parallel) }}
     steps:
